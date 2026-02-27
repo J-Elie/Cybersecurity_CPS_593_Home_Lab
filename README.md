@@ -6,4 +6,5 @@ This repository showcases my cybersecurity home lab projects for the course CPS 
 
 ## Table of Contents
 ### 1 Cybersecurity Tools
-- [Linux Security Basics Lab](1_Cybersecurity_Tools/Linux_Security_Basics_Lab.pdf)
+- [Linux Security Basics Lab](1_Cybersecurity_Tools/Linux_Security_Basics_Lab.md)
+- [View Lab PDF](https://raw.githubusercontent.com/USERNAME/REPO/main/1_Cybersecurity_Tools/Linux_Security_Basics_Lab.pdf)
