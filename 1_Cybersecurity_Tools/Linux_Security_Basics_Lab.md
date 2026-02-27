@@ -6,6 +6,7 @@
 </style>
 
 # Linux Security Basics Lab
+$\color{#18b5a8}{\textsf{lorem ipsum}}$
 <span class="accent">Student:</span> Jennifer Elie  
 <span class="accent">Course:</span> CPS 593 Cybersecurity  
 <span class="accent">Due:</span> March 2<sup>nd</sup> 2026  
