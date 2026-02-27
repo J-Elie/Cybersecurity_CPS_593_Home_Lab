@@ -21,8 +21,8 @@
 As shown in the image below, 84 packages can be upgraded to newer versions on my system. 
 <p align="center">
   <img 
-    src="/1_Cybersecurity_Tools/screenshots/q1-1.png" 
-    alt="sudo apt update command line output:" 
+    src="Screenshots/q1-1.png" 
+    alt="sudo apt update command line output" 
     width="75%"
   />
 </p>
@@ -40,7 +40,7 @@ As shown in the image below, 84 packages can be upgraded to newer versions on my
 A prompt will appear asking whether to proceed with the upgrade. Enter “y” to continue or “n” to stop the upgrade.
 <p align="center">
   <img 
-    src="/1_Cybersecurity_Tools/screenshots/q2-1.png" 
+    src="Screenshots/q2-1.png" 
     alt="sudo apt upgrade command line output:" 
     width="75%"
   />
