@@ -14,10 +14,44 @@
 **Professor:** Kaitlin Hoffmann  
 **Semester:** Spring 2026  
 ---
+
+## Table of Contents
+- [General System Tasks](#1-open-the-terminal-in-your-virtual-machine-vm-enter-the-command-to-retrieve-available-updates)
+  - [1. Update system](#1-open-the-terminal-in-your-virtual-machine-vm-enter-the-command-to-retrieve-available-updates)
+  - [2. Upgrade system](#2-upgrade-your-system)
+  - [3. Reboot system](#3-reboot-your-system)
+- [User Tasks](#4-change-the-current-user-to-root-using-the-command-sudo-su-root-what-does-the-prompt-look-like)
+  - [4. Switch to root user](#4-change-the-current-user-to-root-using-the-command-sudo-su-root-what-does-the-prompt-look-like)
+  - [5. Create users (useradd vs adduser)](#5-while-logged-in-as-root-create-a-new-user-with-the-name-bobby-using-the-command-useradd-next-create-another-user-with-the-name-sally-using-the-command-adduser-what-is-the-difference-between-the-two)
+  - [6. Switch to sally](#6-change-the-current-user-to-sally-what-does-the-prompt-look-like-now)
+  - [7. Test limited permissions](#7-while-still-logged-in-as-sally-try-to-create-a-new-user-with-the-name-earl-what-happens-why-what-could-you-do-to-allow-her-to-create-a-new-user)
+  - [8. Delete user bobby](#8-enter-exit-until-you-are-logged-into-your-own-account-again-delete-the-user-bobby)
+  - [9. Change sally's password](#9-change-the-password-of-sally-to-something-you-can-remember-using-sudo-passwd-sally)
+  - [10. Root security risks](#10-even-though-its-easier-to-complete-taskscommands-why-is-it-bad-practice-to-stay-logged-in-as-root)
+  - [11. Check user ID](#11-enter-the-command-to-see-what-your-user-id-is)
+- [Group Tasks](#12-what-groups-does-the-user-jelie-belong-to)
+  - [12. View user groups](#12-what-groups-does-the-user-jelie-belong-to)
+  - [13. Grant sally sudo access](#13-give-sally-the-ability-to-execute-sudo-commands-next-try-to-create-a-new-user-while-logged-in-as-sally)
+  - [14. Create cybersec group](#14-log-out-of-sally-and-back-into-your-own-account-create-a-new-group-called-cybersec)
+  - [15. Add sally to cybersec](#15-add-sally-to-the-group-cybersec)
+  - [16. Check sally's groups](#16-check-to-see-which-groups-sally-belongs-to)
+- [Permission and ACL Tasks](#17-create-a-new-directory-called-lab1-enter-the-command-to-find-the-permissions-of-the-directory-who-is-the-owner-and-group-owner-of-this-directory-what-permissions-does-the-owner-group-and-other-have)
+  - [17. Directory permissions](#17-create-a-new-directory-called-lab1-enter-the-command-to-find-the-permissions-of-the-directory-who-is-the-owner-and-group-owner-of-this-directory-what-permissions-does-the-owner-group-and-other-have)
+  - [18. Create executable script](#18-change-your-directory-to-lab1-create-a-new-bash-file-called-helloworld-when-ran-your-program-should-just-print-hello-world-dont-forget-to-make-your-bash-file-executable)
+  - [19. Modify file permissions](#19-enter-the-command-ls--l-helloworld-what-are-the-reading-writing-and-executing-permissions-for-the-owner-group-and-other-change-the-permissions-so-the-group-also-has-w-and-x-permissions)
+  - [20. View ACL](#20-use-the-getfacl-command-to-view-the-acl-of-the-file)
+  - [21. Set ACL permissions](#21-using-the-setfacl-command-allow-the-user-sally-the-ability-to-read-and-write-to-the-file)
+
+---
   
-<!-- General System Tasks  -->
+
+---
+
+<!-- General System Tasks --> 
+<!-- anchor: General-System-Tasks -->
 <p>
   <img
+    id="general-system-tasks"
     src="Screenshots/General-System-Tasks.png"
     alt="General System Tasks"
     width="50%"
@@ -136,7 +170,7 @@ As can be seen in the next images, the passwd file contains both users, bobby an
 <p align="center">
   <img 
     src="Screenshots/q5-3.png" 
-    alt="directories" 
+    alt="home directories" 
     width="75%"
   />
 </p>
@@ -152,7 +186,7 @@ As shown in the image, the username in the command prompt changes from root to s
 <p align="center">
   <img 
     src="Screenshots/q6-1.png" 
-    alt="" 
+    alt="su sally command line output" 
     width="75%"
   />
 </p>
@@ -171,14 +205,14 @@ As shown in the command line output, the command fails because sally is not a me
 <p align="center">
   <img 
     src="Screenshots/q7-1.png" 
-    alt="" 
+    alt="sudo adduser earl error command line output" 
     width="75%"
   />
 </p>
 <p align="center">
   <img 
     src="Screenshots/q7-2.png" 
-    alt="" 
+    alt="groups sally command line output" 
     width="75%"
   />
 </p>
@@ -200,14 +234,14 @@ When checking the passwd file, it can be seen that bobby has been deleted from t
 <p align="center">
   <img 
     src="Screenshots/q8-1.png" 
-    alt="" 
+    alt="exit and sudo userdel bobby command line output" 
     width="75%"
   />
 </p>
 <p align="center">
   <img 
     src="Screenshots/q8-2.png" 
-    alt="" 
+    alt="shadow file no longer has user bobby" 
     width="75%"
   />
 </p>
@@ -226,7 +260,7 @@ When checking the passwd file, it can be seen that bobby has been deleted from t
 <p align="center">
   <img 
     src="Screenshots/q9-1.png" 
-    alt="" 
+    alt="sudo passwd sally command line output" 
     width="75%"
   />
 </p>
@@ -247,7 +281,7 @@ Some of the reasons were mentioned earlier in the explanation of sudo, but to re
 <p align="center">
   <img 
     src="Screenshots/q11-1.png" 
-    alt="" 
+    alt="id command line output" 
     width="75%"
   />
 </p>
@@ -258,7 +292,7 @@ Some of the reasons were mentioned earlier in the explanation of sudo, but to re
 <p>
   <img 
     src="Screenshots/Group-Tasks.png" 
-    alt="" 
+    alt="Group tasks" 
     width="50%"
   />
 </p>
@@ -275,7 +309,7 @@ The groups that I am a part of are jelie, adm, cdrom, sudo, dip, plugdev, lpadmi
 <p align="center">
   <img 
     src="Screenshots/q12-1.png" 
-    alt="" 
+    alt="id and groups command line output" 
     width="75%"
   />
 </p>
@@ -297,14 +331,14 @@ The groups that I am a part of are jelie, adm, cdrom, sudo, dip, plugdev, lpadmi
 <p align="center">
   <img 
     src="Screenshots/q13-1.png" 
-    alt="" 
+    alt="sudo usermod -a -G sudo sally command line output" 
     width="75%"
   />
 </p>
 <p align="center">
   <img 
     src="Screenshots/q13-2.png" 
-    alt="" 
+    alt="sudo useradd ava command line output" 
     width="75%"
   />
 </p>
@@ -320,7 +354,7 @@ The groups that I am a part of are jelie, adm, cdrom, sudo, dip, plugdev, lpadmi
 <p align="center">
   <img 
     src="Screenshots/q14-1.png" 
-    alt="" 
+    alt="sudo groupadd cybersec command line output" 
     width="75%"
   />
 </p>
@@ -338,7 +372,7 @@ The groups that I am a part of are jelie, adm, cdrom, sudo, dip, plugdev, lpadmi
 <p align="center">
   <img 
     src="Screenshots/q15-1.png" 
-    alt="" 
+    alt="sudo usermod -a -G cybersec sally command line output" 
     width="75%"
   />
 </p>
@@ -356,7 +390,7 @@ The groups that I am a part of are jelie, adm, cdrom, sudo, dip, plugdev, lpadmi
 <p align="center">
   <img 
     src="Screenshots/q16-1.png" 
-    alt="" 
+    alt="id sally and groups sally command line output" 
     width="75%"
   />
 </p>
@@ -367,90 +401,155 @@ The groups that I am a part of are jelie, adm, cdrom, sudo, dip, plugdev, lpadmi
 <p>
   <img 
     src="Screenshots/Permission-and-ACL-Tasks.png" 
-    alt="" 
+    alt="Permission-and-ACL-Tasks" 
     width="50%"
   />
 </p>
 
-## .      
-**Command:** ``    
+## 17. Create a new directory called lab1. Enter the command to find the permissions of the directory. Who is the owner and group owner of this directory? What permissions does the owner, group and other have?       
+**Command:** `mkdir lab1`  
+**Command:** `ls -ld lab1`   
 **Command explanation:**  
-- **`sudo:`**  
-- **`passwd:`**
-- **`sally:`**
+- **`mkdir:`** Short for make directory. It is used to create folders to organize the file structure of the system.  
+- **`lab1:`** This argument specifies the name of the directory being created.
+- **`ls:`** Lists the files and directories in the current directory.
+- **`-ld or -l -d:`** The -l flag displays detailed information in long format, including the permissions, owner,and group owner. The -d flag tells the command to show information about the directory itself. When used together as -ld, the command shows the detailed information for the specified directory only.
+- **`lab1:`** This argument specifies the name of the directory for which you want to view the permissions and detailed information when used with command ls -ld.
 
 **Command line output:**  
+The owner is jelie. The group is jelie.  
+The permissions are as follows:   
+- Owner: rwx
+- Group: rwx
+- Other: r-x
+
 <p align="center">
   <img 
-    src="Screenshots/q-1.png" 
-    alt="" 
+    src="Screenshots/q17-1.png" 
+    alt="mkdir lab1 and ls -ld lab1 command line output" 
     width="75%"
   />
 </p>
 
-## .      
-**Command:** ``    
+## 18. Change your directory to lab1. Create a new bash file called, helloWorld. When ran, your program should just print “Hello World!”. (Don’t forget to make your bash file executable).       
+**Command:** `cd lab1`    
+**Command:** `nano helloWorld`    
+**Command:** `chmod +x helloWorld`    
 **Command explanation:**  
-- **`sudo:`**  
-- **`passwd:`**
-- **`sally:`**
+- **`cd:`** Changes the current directory.
+- **`lab1:`** The directory being changed into.
+- **`nano:`** A text editor used to create and edit files directly in the terminal. In this case, it is used to create and edit the bash script.
+- **`helloWorld:`** The name of the bash file being created.
+- **`chmod:`** Is short for change mode. This command is used to change or modify the permissions of a file or directory. The permissions are read, write, and execute.  
+- **`+x:`** This argument adds executable permissions to the specified file, allowing it to be run as a program.
+- **`helloWorld:`** The name of the file being having its permissions modified.
 
 **Command line output:**  
 <p align="center">
   <img 
-    src="Screenshots/q-1.png" 
-    alt="" 
+    src="Screenshots/q18-1.png" 
+    alt="cd lab1 and nano helloWorld command line output" 
+    width="75%"
+  />
+</p>
+
+**File Input:** 
+- **`#!/bin/bash:`** This line tells the system to use bash to run the script. It is also called 
+- **`echo “Hello World!”`**This line prints Hello World! to the terminal.
+
+<p align="center">
+  <img 
+    src="Screenshots/q18-2.png" 
+    alt="nano input" 
+    width="75%"
+  />
+</p>
+<p align="center">
+  <img 
+    src="Screenshots/q18-3.png" 
+    alt="chmod +x helloWorld command line output" 
+    width="75%"
+  />
+</p>
+<p align="center">
+  <img 
+    src="Screenshots/q18-4.png" 
+    alt="running helloWorld command line output" 
+    width="75%"
+  />
+</p>
+
+## 19. Enter the command ls -l helloWorld. What are the reading, writing, and executing permissions for the owner, group and other? Change the permissions so the group also has w and x permissions.      
+**Command:** `ls -l helloWorld`    
+**Command:** `chmod g+wx helloWorld`  
+**Command explanation:**  
+- **`ls:`** Lists files and directories with detailed information when used with the -l option.
+- **`-L:`** Displays the file in long format showing permissions, owner, group, size, and modification date.
+- **`helloWorld:`** This is the file whose permission information will be displayed.
+- **`g+wx:`** This argument is used with the chmod command, where g specifies the group, + means to add permissions, and w and x represent write and execute permissions; together, g+wx adds write and execute permissions to the group for the specified file.
+- **`helloWorld:`** This argument specifies the file whose permissions are being modified by the chmod command.
+
+**Command line output:**  
+For the first ls -l command, the rwx permissions were as follows:  
+Owner: read, write, execute  
+Group: read, write, execute  
+Other: execute  
+Because the group already had full permissions, the command chmod g-wx helloWorld was run to adjust the permissions as directed in the lab. After running that command, the permissions were:  
+Owner: read, write, execute  
+Group: read  
+Other: execute  
+The group permissions were then set back to rwx to restore the original configuration.  
+
+<p align="center">
+  <img 
+    src="Screenshots/q19-1.png" 
+    alt="ls -l helloWorld and chmod g+wx helloWorld command line output" 
     width="75%"
   />
 </p>
 
 
-## .      
-**Command:** ``    
+## 20. Use the getfacl command to view the ACL of the file.     
+**Command:** `getfacl helloWorld`    
 **Command explanation:**  
-- **`sudo:`**  
-- **`passwd:`**
-- **`sally:`**
+- **`getfacl:`** This command displays the Access Control List (ACL) permissions of a file or directory. It shows both the standard permissions and any additional ACL entries that have been set.  
+- **`helloWorld:`** This argument specifies the file whose ACL information is being displayed.  
 
 **Command line output:**  
 <p align="center">
   <img 
-    src="Screenshots/q-1.png" 
-    alt="" 
+    src="Screenshots/q20-1.png" 
+    alt="getfacl helloWorld command line output" 
     width="75%"
   />
 </p>
 
 
-## .      
-**Command:** ``    
+## 21. Using the setfacl command, allow the user, sally, the ability to read and write to the file.     
+**Command:** `setfacl -m u:sally:rw- helloWorld`    
 **Command explanation:**  
-- **`sudo:`**  
-- **`passwd:`**
-- **`sally:`**
+- **`setfacl:`** Modifies the Access Control List (ACL) permissions for a file or directory. It allows for groups and users to be given individualized permissions beyond standard owner/group/other permissions.
+- **`-m:`** Stands for modify. It is used to modify or add a new ACL entry to a file.
+- **`u::`** Specifies that the permission is being assigned to a specific user. Got a group the flag would be g.
+- **`sally::`** The username of the user receiving the specified permissions.
+- **`rw-:`** Grants read and write permissions and no execute permissions
+- **`helloWorld:`** The file to which the setfacl command is targeting.
 
 **Command line output:**  
 <p align="center">
   <img 
-    src="Screenshots/q-1.png" 
-    alt="" 
+    src="Screenshots/q21-1.png" 
+    alt="setfacl -m u:sally:rw- helloWorld command line output" 
     width="75%"
   />
 </p>
 
+---
 
-## .      
-**Command:** ``    
-**Command explanation:**  
-- **`sudo:`**  
-- **`passwd:`**
-- **`sally:`**
-
-**Command line output:**  
 <p align="center">
   <img 
-    src="Screenshots/q-1.png" 
-    alt="" 
-    width="75%"
+    src="Screenshots/End-Of-Lab-Report.png" 
+    alt="End of lab report" 
+    width="100%"
   />
 </p>
