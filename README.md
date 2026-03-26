@@ -14,4 +14,4 @@ This repository showcases my cybersecurity home lab projects for the course CPS 
 
 2. Environment Variable and Set-UID Lab
     - [View Lab Markdown (not done)](1_Cybersecurity_Tools/2_Environment_Variable_and_Set_UID_Lab/Environment_Variable_and_Set-UID_Lab.md)
-    - [Download Lab PDF](https://raw.githubusercontent.com/J-Elie/Cybersecurity_CPS_593_Home_Lab/main/1_Cybersecurity_Tools/2_Environment_Variable_and_Set_UID_Lab/ENV_And_Set_UID_Lab)
+    - [Download Lab PDF](https://raw.githubusercontent.com/J-Elie/Cybersecurity_CPS_593_Home_Lab/main/1_Cybersecurity_Tools/2_Environment_Variable_and_Set_UID_Lab/ENV_And_Set_UID_Lab.pdf)
